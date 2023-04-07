@@ -1,6 +1,6 @@
-import { Request, Response } from "express";
+import { Request, Response } from 'express';
 
-import { AuthenticateClientUseCase } from "./AuthenticateClientUseCase";
+import { AuthenticateClientUseCase } from './AuthenticateClientUseCase';
 
 class AuthenticateClientController {
   public async create(request: Request, response: Response): Promise<Response> {
@@ -8,10 +8,13 @@ class AuthenticateClientController {
 
     const authenticateUserUseCase = new AuthenticateClientUseCase();
 
-    const client = await authenticateUserUseCase.execute({ username, password });
+    const client = await authenticateUserUseCase.execute({
+      username,
+      password,
+    });
 
     return response.status(200).json(client);
   }
 }
 
-export { AuthenticateClientController }
+export { AuthenticateClientController };

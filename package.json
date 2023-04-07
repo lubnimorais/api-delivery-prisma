@@ -9,9 +9,11 @@
     "dev:server": "tsnd -r tsconfig-paths/register --transpile-only --ignore-watch node_modules --respawn --exit-child src/shared/infra/http/server.ts"
   },
   "devDependencies": {
+    "@rocketseat/eslint-config": "^1.2.0",
     "@types/bcryptjs": "^2.4.2",
     "@types/express": "^4.17.16",
     "@types/jsonwebtoken": "^9.0.1",
+    "eslint": "^8.37.0",
     "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.1.2",
     "typescript": "^4.9.4"
