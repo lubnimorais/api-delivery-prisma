@@ -13,7 +13,7 @@ class AuthenticateClientController {
       password,
     });
 
-    return response.status(200).json(client);
+    return response.status(201).json(client);
   }
 }
 

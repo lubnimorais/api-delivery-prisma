@@ -1,10 +1,10 @@
-import { hash } from "bcryptjs";
+import { hash } from 'bcryptjs';
 
-import { prismaClient } from "../../../../database/prismaClient"
+import { prismaClient } from '../../../../database/prismaClient';
 
 interface IRequest {
-  username: string
-  password: string
+  username: string;
+  password: string;
 }
 
 class CreateClientUseCase {
@@ -13,8 +13,8 @@ class CreateClientUseCase {
       where: {
         username: {
           mode: 'insensitive',
-        }
-      }
+        },
+      },
     });
 
     if (clientExists) {
@@ -27,11 +27,11 @@ class CreateClientUseCase {
       data: {
         username,
         password: hashPassword,
-      }
+      },
     });
 
-    return client
+    return client;
   }
 }
 
-export { CreateClientUseCase }
+export { CreateClientUseCase };
